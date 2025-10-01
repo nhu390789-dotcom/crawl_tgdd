@@ -65,13 +65,13 @@ def crawl_tgdd_multi(output="tgdd_all.json"):
             all_products.extend(products) # thêm vào list tổng
             time.sleep(2)  # nghỉ 2s tránh spam
         except Exception as e: # nếu lỗi thì in ra và bỏ qua
-            print(f"❌ Lỗi khi crawl {cat}: {e}")
+            print(f"Lỗi khi crawl {cat}: {e}")
 
     # Lưu JSON
     with open(output, "w", encoding="utf-8") as f:
         json.dump(all_products, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Crawl xong {len(all_products)} sản phẩm, lưu vào {output}")
+    print(f"Crawl xong {len(all_products)} sản phẩm, lưu vào {output}")
 
 # Chạy hàm crawl
 if __name__ == "__main__": 
